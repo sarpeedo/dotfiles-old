@@ -38,4 +38,4 @@ if [ -f /etc/bash_completion ]; then
     ./etc/bash_completion
 fi
 
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+#source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
