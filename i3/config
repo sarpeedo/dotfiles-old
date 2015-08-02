@@ -7,7 +7,7 @@ set $myres       8
 set $gsi         10
 set $gso         0
 
-set $bordersize  2
+set $bordersize  4
 
 set $background  #1d2021
 set $foreground  #ebdbb2
@@ -164,8 +164,8 @@ bindsym                 $mod+Shift+Right move right
 bindsym                 $mod+e layout toggle split
 bindsym                 $mod+f fullscreen
 
-bindsym                 $mod+ctrl+l split h
-bindsym                 $mod+ctrl+j split v
+bindsym                 $mod+i split h
+bindsym                 $mod+v split v
 
 bindsym                 $mod+Shift+s floating toggle
 bindsym                 $mod+s focus mode_toggle
@@ -197,7 +197,7 @@ bindsym                 $mod+r mode "resize"
 #                               startup                               #
 #######################################################################
 
-exec --no-startup-id "feh --bg-scale ~.wallpapers/earth.png"
+exec --no-startup-id "feh --bg-scale ~/.wallpapers/sea.png"
 exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "xrdb ~/.Xresources"
 exec --no-startup-id "setxkbmap -option ctrl:nocaps"

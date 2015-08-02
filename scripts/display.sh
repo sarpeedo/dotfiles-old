@@ -49,3 +49,5 @@ else
 	`$execute`
 fi
 echo -e "\n$(xrandr)"
+
+feh --bg-scale ~/.wallpapers/sea.png
