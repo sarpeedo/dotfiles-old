@@ -146,6 +146,7 @@ nnoremap ; :
 
 " Compiling Remaps Supports (Python,LaTeX,Java,R,sh) TODO: add C, C++ support
 set filetype=on
+
 " executes command on file (without the extension)
 function CuzJavaIsStupid (command)
    execute "!clear;time " . a:command . " " . expand("%:r")
