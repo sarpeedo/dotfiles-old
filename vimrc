@@ -53,11 +53,7 @@ set cursorline
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " Enable 256 colors
 set t_Co=256
-" Set background and colorshceme
-let base16colorspace=256
-set background=dark
-colorscheme gruvbox
-"
+
 " for getting rid of annoying flashing and beeping
 set guioptions-=m
 autocmd GUIEnter * set vb t_vb=
