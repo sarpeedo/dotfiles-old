@@ -10,6 +10,9 @@ stty -ixon
 # best text editor ever made
 export EDITOR=vim
 
+# not quite best browser ever made (but good enough for my tastes)
+export BROWSER=chromium
+
 # setup of aliases
 alias ls='ls --color=auto'
 alias ll='ls -l'
