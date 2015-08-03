@@ -14,7 +14,7 @@ BLURTYPE="0x5" # 7.52s
 #BLURTYPE="2x3" # 2.92s
 
 scrot $IMAGE
-convert $IMAGE -blur $BLURTYPE -font Inconsolata -pointsize 50 -fill green -gravity center -annotate +0+150 'Type to Unlock' $IMAGE
+convert $IMAGE -blur $BLURTYPE -font Inconsolata -pointsize 50 -fill green -gravity center -annotate +0+150 'type to unlock' $IMAGE
 composite -gravity center ~/.wallpapers/lock.png $IMAGE $IMAGE
 i3lock -i $IMAGE
 rm $IMAGE

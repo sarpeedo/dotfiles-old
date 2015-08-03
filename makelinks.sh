@@ -8,6 +8,9 @@ dir=~/dotfiles
 olddir=~/dotfiles_old
 files="bashrc vimrc conkyrc xinitrc Xresources tmux.conf i3status.conf i3/config config/dunst/dunstrc scripts wallpapers"
 
+# make scripts executable
+sudo chmod +x scripts/*
+
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
 mkdir -p $olddir

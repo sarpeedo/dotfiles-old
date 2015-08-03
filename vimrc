@@ -13,12 +13,24 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'gmarik/Vundle.vim'
 
+" colorsheme
 Plug 'morhetz/gruvbox'
+
+" vim interface
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
+
+" prose editing
+Plug 'junegunn/goyo.vim'
+
+" document conversion
+Plug 'vim-pandoc/vim-pandoc'
+
+" markdown
+Plug 'suan/vim-instant-markdown'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -134,7 +146,7 @@ inoremap <C-q> <Esc>:q!<CR>
 nnoremap : ;
 nnoremap ; :
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Auto Commands                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -158,6 +170,9 @@ autocmd FileType java nnoremap <C-e> :call RunWith("javac")<cr><cr>:call CuzJava
 autocmd FileType r nnoremap <C-e> :call RunWith("Rscript")<cr>
 autocmd FileType sh nnoremap <C-e> :w<cr>:!./%<cr>
 
+" all md files are markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " swap absolute and relative line numbers
 function! g:ToggleNuMode()
     if(&rnu == 1)
@@ -169,17 +184,16 @@ endfunc
 
 nnoremap <C-l> :call g:ToggleNuMode()<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              Plugin Settings                               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Airline
-set noshowmode
 let g:airline_powerline_fonts=1
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
 
 " Gruvbox
 let g:gruvbox_italic=0
 
-
+" Vim Instant Markdown
+let g:instant_markdown_autostart = 0
+autocmd FileType markdown nnoremap <C-e> :InstantMarkdownPreview<cr>

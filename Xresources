@@ -17,7 +17,7 @@ Xft.hintstyle:  hintfull
 xterm*termName:         xterm-256color
 xterm*borderWidth:      0
 xterm*utf8:             true
-xterm*faceName:         Inconsolata: size=13: antialias=true
+xterm*faceName:         Inconsolata for Powerline: size=13: antialias=true
 xterm*dynamicColors:    true
 xterm*locale:           true
 xterm*scrollTtyOutput:  true
