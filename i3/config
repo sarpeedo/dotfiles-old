@@ -209,14 +209,14 @@ bindsym                 $mod+r mode "resize"
 #                               startup                               #
 #######################################################################
 
-exec --no-startup-id "feh --bg-scale ~/.wallpapers/sea.png"
+exec --no-startup-id "feh --bg-scale ~/.wallpapers/sea.jpg"
 exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "xrdb ~/.Xresources"
 exec --no-startup-id "setxkbmap -option ctrl:nocaps"
 exec --no-startup-id "redshift -t 6500:2700 &"
 exec --no-startup-id "dunst &"
 exec --no-startup-id "udiskie &"
-exec --no-startup-id "~/.bin/display.sh"
+#exec --no-startup-id "~/.bin/display.sh"
 #exec --no-startup-id "compton -CGbz -r 8 -o 0.2 -l -12 -t -12 --backend glx --vsync opengl --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'"
 
 #######################################################################
