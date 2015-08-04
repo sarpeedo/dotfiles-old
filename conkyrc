@@ -22,8 +22,8 @@ text_buffer_size 2048
 # - Window specifications - #
 #############################
 own_window_class Conky
-own_window no
-own_window_type normal
+own_window yes
+own_window_type dock
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
