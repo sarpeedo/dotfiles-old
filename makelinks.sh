@@ -6,7 +6,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bashrc vimrc conkyrc xinitrc Xresources tmux.conf i3status.conf i3/config config/dunst/dunstrc scripts wallpapers"
+files="bashrc vimrc conkyrc config/compton.conf xinitrc Xresources tmux.conf i3status.conf i3/config config/dunst/dunstrc scripts wallpapers"
 
 # make scripts executable
 sudo chmod +x scripts/*
