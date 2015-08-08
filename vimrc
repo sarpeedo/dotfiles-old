@@ -136,10 +136,6 @@ inoremap <C-g> <Esc>:w !sudo tee % > /dev/null<CR><CR>a
 nnoremap <C-q> :q!<CR>
 inoremap <C-q> <Esc>:q!<CR>
 
-" swap colon and semicolon in normal mode
-nnoremap : ;
-nnoremap ; :
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Auto Commands                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
