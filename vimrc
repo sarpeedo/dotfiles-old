@@ -17,9 +17,14 @@ Plug 'morhetz/gruvbox'
 " vim interface
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+
+" vim tags
+Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 " prose editing
 Plug 'junegunn/goyo.vim'
@@ -54,6 +59,14 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " Enable 256 colors
 set t_Co=256
 
+" tabs w/ tab char equiv to four spaces
+set tabstop=4
+set shiftwidth=4
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             Gui Settings                                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " for getting rid of annoying flashing and beeping
 set guioptions-=m
 autocmd GUIEnter * set vb t_vb=
@@ -68,13 +81,12 @@ set guioptions-=r
 "remove left-hand scroll bar
 set guioptions-=L
 
+"set gui font
+set guifont=Inconsolata\ for\ Powerline\ 12
+
 " keep annoying popups out of the way
 autocmd FileChangedRO * echohl WarningMsg | echo "File Changed RO" | echohl None
 autocmd FileChangedShell * echohl WarningMsg | echo "File Changed Shell" | echohl None
-
-" tabs w/ tab char equiv to four spaces
-set tabstop=4
-set shiftwidth=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Vim Settings                                "
@@ -189,23 +201,11 @@ let g:gruvbox_italic=0
 let g:instant_markdown_autostart = 0
 autocmd FileType markdown nnoremap <C-e> :InstantMarkdownPreview<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              Word Count                                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tagbar
+nnoremap <C-i> :TagbarToggle<cr>
 
-function! WordCount()
-	let s:old_status = v:statusmsg
-	let position = getpos(".")
+" NERDtree
+"nnoremap <C-
 
-	exe ":silent normal g\"
-	let stat = v:statusmsg
-	let s:word_count = 0
-
-	if stat != '--No lines in buffer--'
-		let s:word_count = str2nr(split(v:statusmsg)[11])
-		let v:statusmsg = s:old_status
-	end
-
-	call setpos('.', position)
-	return s:word_count
-endfunction
+" CtrlP
+nnoremap <Space> :CtrlP<cr>
