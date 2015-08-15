@@ -201,8 +201,8 @@ let g:gruvbox_italic=0
 let g:instant_markdown_autostart = 0
 autocmd FileType markdown nnoremap <C-e> :InstantMarkdownPreview<cr>
 
-" Tagbar
-nnoremap <C-i> :TagbarToggle<cr>
+" Tagbar default binding tab
+"nnoremap <C-i> :TagbarToggle<cr>
 
 " NERDtree
 "nnoremap <C-

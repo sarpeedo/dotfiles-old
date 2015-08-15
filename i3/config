@@ -253,3 +253,6 @@ bar {
 #######################################################################
 
 assign [class="Spotify"] 10
+
+# windows always floating
+for_window [class="mpv"] floating enable
