@@ -9,8 +9,9 @@ set $gso         0
 
 set $bordersize  2
 
-set $background  #1d2021
-set $foreground  #ebdbb2
+set $background  #101214
+#set $foreground  #ebdbb2
+set $foreground  #ff7f00
 set $black       #282828
 set $darkgrey    #928374
 set $darkred     #cc241d
@@ -73,7 +74,9 @@ bindsym                 $mod+Print exec "scrot -s 'scrot_%m-%d-%Y_%H-%M-%S.png' 
 #                         launcher & terminal                         #
 #######################################################################
 
-bindsym                 $mod+p exec rofi -show run --terminal xterm -font 'Inconsolata 11' -lines 5
+bindsym                 $mod+p exec rofi -show run -terminal xterm -font 'Inconsolata 11' -lines 5 -bw 2 -bc "#FF7F00"
+bindsym                 $mod+w exec rofi -show window -terminal xterm -font 'Inconsolata 11' -bw 2 -bc "#FF7F00"
+bindsym                 $mod+s exec rofi -show ssh -terminal xterm -font 'Inconsolata 11' -lines 3 -bw 2 -bc "#FF7F00"
 bindsym                 $mod+Return exec xterm
 
 #######################################################################
@@ -238,11 +241,11 @@ bar {
 
     colors {
         background $background
-        statusline $foreground
+        statusline $white
         separator $darkgrey
 
-        focused_workspace  $background $background $foreground
-        active_workspace   $background $background $foreground
+        focused_workspace  $background $background $white
+        active_workspace   $background $background $white
         inactive_workspace $background $background $darkgrey
         urgent_workspace   $background $background $red
     }

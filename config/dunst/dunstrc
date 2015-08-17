@@ -149,7 +149,8 @@
 
 [frame]
     width = 2
-    color = "#ebdbb2"
+    #color = "#ebdbb2"
+    color = "#ff7f00"
 
 [shortcuts]
 
