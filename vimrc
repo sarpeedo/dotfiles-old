@@ -16,10 +16,13 @@ Plug 'morhetz/gruvbox'
 
 " vim interface
 Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
+
+" git plugins
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " vim tags
 Plug 'majutsushi/tagbar'
@@ -202,7 +205,7 @@ let g:instant_markdown_autostart = 0
 autocmd FileType markdown nnoremap <C-e> :InstantMarkdownPreview<cr>
 
 " Tagbar default binding tab
-"nnoremap <C-i> :TagbarToggle<cr>
+nnoremap <C-i> :TagbarToggle<cr>
 
 " NERDtree
 "nnoremap <C-

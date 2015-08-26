@@ -23,6 +23,7 @@ alias c='clear'
 alias tmux='tmux -2'
 alias t='tmux -2'
 alias pacman='sudo pacman'
+alias tmproxy='sudo ssh -D 443 -g -N sorgul@student.andover.edu'
 
 alias e='exit'
 
@@ -41,4 +42,10 @@ if [ -f /etc/bash_completion ]; then
     ./etc/bash_completion
 fi
 
+# Path variable additions
+
 #source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

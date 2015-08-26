@@ -10,8 +10,8 @@ set $gso         0
 set $bordersize  2
 
 set $background  #101214
-#set $foreground  #ebdbb2
-set $foreground  #ff7f00
+set $foreground  #ebdbb2
+#set $foreground  #ff7f00
 set $black       #282828
 set $darkgrey    #928374
 set $darkred     #cc241d
@@ -105,8 +105,8 @@ bindsym                 XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym                 XF86MonBrightnessDown exec "xbacklight -dec 5"
 bindsym                 XF86Display exec "~/.bin/display.sh"
 
-bindsym                 XF86AudioNext exec "playerctl previous"
-bindsym                 XF86AudioPrev exec "playerctl next"
+bindsym                 XF86AudioNext exec "playerctl next"
+bindsym                 XF86AudioPrev exec "playerctl previous"
 bindsym                 XF86AudioPlay exec "playerctl play-pause"
 
 #######################################################################
@@ -214,6 +214,7 @@ bindsym                 $mod+r mode "resize"
 
 exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "setxkbmap -option ctrl:nocaps"
+exec --no-startup-id "compton"
 exec --no-startup-id "redshift -t 6500:2700 &"
 exec --no-startup-id "dunst &"
 exec --no-startup-id "udiskie &"
@@ -221,7 +222,6 @@ exec --no-startup-id "udiskie &"
 #exec --no-startup-id "docky"
 exec --no-startup-id "xrdb ~/.Xresources"
 exec --no-startup-id "feh --bg-scale ~/.wallpapers/sea.jpg"
-exec --no-startup-id "compton"
 #exec --no-startup-id "compton -CGbz -r 8 -o 0.2 -l -12 -t -12 --backend glx --vsync opengl --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'"
 
 #######################################################################
