@@ -21,6 +21,9 @@ Plug 'scrooloose/syntastic' "syntax highlighting
 Plug 'scrooloose/nerdtree' "foldertree-bar
 Plug 'nathanaelkane/vim-indent-guides' "shows vim indents
 
+" speeding up vim
+Plug 'terryma/vim-multiple-cursors' "for sublime like editing in vim
+
 " git plugins
 Plug 'tpope/vim-fugitive' "git commands in vim
 Plug 'airblade/vim-gitgutter' "git diff in left bar
