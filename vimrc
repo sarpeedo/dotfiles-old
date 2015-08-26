@@ -15,28 +15,29 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 
 " vim interface
-Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline' "airline bar
+Plug 'kien/ctrlp.vim' "fuzzy finder
+Plug 'scrooloose/syntastic' "syntax highlighting
+Plug 'scrooloose/nerdtree' "foldertree-bar
+Plug 'nathanaelkane/vim-indent-guides' "shows vim indents
 
 " git plugins
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive' "git commands in vim
+Plug 'airblade/vim-gitgutter' "git diff in left bar
 
 " vim tags
-Plug 'majutsushi/tagbar'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar' "shows tags from file
+Plug 'xolox/vim-misc' "dep for easytags
+Plug 'xolox/vim-easytags' "tag generation from files
 
 " prose editing
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim' "distraction free mode in vim
 
 " document conversion
-Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc' "for pandoc and markdown in vim
 
 " markdown
-Plug 'suan/vim-instant-markdown'
+Plug 'suan/vim-instant-markdown' "markdown preview in vim
 
 " Add plugins to &runtimepath
 call plug#end()
