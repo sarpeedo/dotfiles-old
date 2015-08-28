@@ -50,4 +50,4 @@ else
 fi
 echo -e "\n$(xrandr)"
 
-feh --bg-scale ~/.wallpapers/sea.png
+feh --bg-scale ~/.wallpapers/sea.jpg
