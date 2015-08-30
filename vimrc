@@ -142,14 +142,17 @@ vnoremap kj <Esc>
 vnoremap jk <Esc>
 
 " Clear last search
-nnoremap <C-h> :let @/ = ""<CR>
-inoremap <C-h> <Esc>:let @/ = ""<CR>a
+nnoremap <leader>h :let @/ = ""<CR>
+inoremap <leader>h <Esc>:let @/ = ""<CR>a
 
 " Ctrl S for save Ctrl G for sudo save
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
-nnoremap <C-g> :w !sudo tee % > /dev/null<CR>
-inoremap <C-g> <Esc>:w !sudo tee % > /dev/null<CR><CR>a
+nnoremap <leader>s :w<CR>
+inoremap <leader>s <Esc>:w<CR>a
+nnoremap <leader>g :w !sudo tee % > /dev/null<CR>
+inoremap <leader>g <Esc>:w !sudo tee % > /dev/null<CR><CR>a
+
+" map control-backspace to delete the previous word
+imap <C-BS> <C-W>
 
 " quit vim remap
 nnoremap <C-q> :q!<CR>
