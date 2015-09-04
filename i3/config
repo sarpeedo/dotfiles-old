@@ -74,9 +74,9 @@ bindsym                 $mod+Print exec "scrot -s 'scrot_%m-%d-%Y_%H-%M-%S.png' 
 #                         launcher & terminal                         #
 #######################################################################
 
-bindsym                 $mod+p exec rofi -show run -terminal xterm -font 'Inconsolata 11' -lines 5 -bw 2 -bc "#FF7F00"
-bindsym                 $mod+w exec rofi -show window -terminal xterm -font 'Inconsolata 11' -bw 2 -bc "#FF7F00"
-bindsym                 $mod+s exec rofi -show ssh -terminal xterm -font 'Inconsolata 11' -lines 3 -bw 2 -bc "#FF7F00"
+bindsym                 $mod+p exec rofi -show run -terminal xterm -font 'Inconsolata 11' -lines 5 -bw 2 -bc "#ebdbb2"
+bindsym                 $mod+w exec rofi -show window -terminal xterm -font 'Inconsolata 11' -bw 2 -bc "#ebdbb2"
+bindsym                 $mod+s exec rofi -show ssh -terminal xterm -font 'Inconsolata 11' -lines 3 -bw 2 -bc "#ebdbb2"
 bindsym                 $mod+Return exec xterm
 
 #######################################################################
