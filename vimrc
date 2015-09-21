@@ -215,7 +215,7 @@ autocmd FileType markdown nnoremap <C-e> :InstantMarkdownPreview<cr>
 nnoremap <C-i> :TagbarToggle<cr>
 
 " NERDtree
-"nnoremap <C-
+nnoremap <leader>n :NERDTreeToggle<cr>
 
 " CtrlP
 nnoremap <Space> :CtrlP<cr>
