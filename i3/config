@@ -257,7 +257,7 @@ bar {
 #                         window assignments                          #
 #######################################################################
 
-assign [class="Chromium"] 3:
+assign [class="chromium"] 3:
 assign [class="Firefox"] 3:
 assign [class="libreoffice"] 4:
 assign [class="Nautilus"] 5:
