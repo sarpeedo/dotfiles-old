@@ -2,9 +2,9 @@
 #                              variables                              #
 #######################################################################
 
-set $mod         Mod1
+set $mod         Mod4
 set $myres       8
-set $gsi         0
+set $gsi         30
 set $gso         0
 
 set $bordersize  2
@@ -225,43 +225,45 @@ exec --no-startup-id "udiskie &"
 exec --no-startup-id "xrdb ~/.Xresources"
 exec --no-startup-id "feh --bg-scale ~/.wallpapers/sea.jpg"
 #exec --no-startup-id "compton -CGbz -r 8 -o 0.2 -l -12 -t -12 --backend glx --vsync opengl --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'"
+exec --no-startup-id "conky"
 
 #######################################################################
 #                                 bar                                 #
 #######################################################################
 
-bar {
-    status_command i3blocks
-    position top
-    tray_output primary
-    font xft: FontAwesome, Inconsolata 13
-    separator_symbol " "
-    workspace_buttons yes
-    strip_workspace_numbers no
-    binding_mode_indicator yes
-    height 20
-
-    colors {
-        background $background
-        statusline $white
-        separator $darkgrey
-
-        focused_workspace  $background $background $white
-        active_workspace   $background $background $white
-        inactive_workspace $background $background $darkgrey
-        urgent_workspace   $background $background $red
-    }
-}
+#bar {
+#    status_command i3blocks
+#    position top
+#    tray_output primary
+#    font xft: FontAwesome, Inconsolata 13
+#    separator_symbol " "
+#    workspace_buttons yes
+#    strip_workspace_numbers no
+#    binding_mode_indicator yes
+#    height 20
+#
+#    colors {
+#        background $background
+#        statusline $white
+#        separator $darkgrey
+#
+#        focused_workspace  $background $background $white
+#        active_workspace   $background $background $white
+#        inactive_workspace $background $background $darkgrey
+#        urgent_workspace   $background $background $red
+#    }
+#}
 
 #######################################################################
 #                         window assignments                          #
 #######################################################################
 
-assign [class="chromium"] 3:
-assign [class="Firefox"] 3:
-assign [class="libreoffice"] 4:
-assign [class="Nautilus"] 5:
-assign [class="Spotify"] 10:
+#assign [class="chromium"] 3:
+#assign [class="Firefox"] 3:
+#assign [class="libreoffice"] 4:
+#assign [class="Nautilus"] 5:
+#assign [class="Spotify"] 10:
 
 # windows always floating
 for_window [class="mpv"] floating enable
+for_window [class="vbam"] floating enable

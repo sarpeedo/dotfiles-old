@@ -1,137 +1,207 @@
-######################
-# - Conky settings - #
-######################
+#====================================
+#   Conky Settings
+#====================================
+background yes
 update_interval 1
-total_run_times 0
-net_avg_samples 1
-cpu_avg_samples 1
-
-imlib_cache_size 0
 double_buffer yes
 no_buffers yes
 
-#####################
-# - Text settings - #
-#####################
-use_xft yes
-xftfont Ubuntu:size=9
-override_utf8_locale yes
-text_buffer_size 2048
 
-#############################
-# - Window specifications - #
-#############################
-own_window_class Conky
-own_window no
-own_window_type dock
+#====================================
+#   Window Specifications
+#====================================
+gap_x 0
+gap_y 50
+alignment bottom_middle
+minimum_size 600 380
+maximum_width 600
+
+own_window yes
+own_window_type normal
 own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_type override
 
-alignment top_left
-gap_x 16
-gap_y 100
-minimum_size 182 700
-maximum_width 182
+#own_window_argb_visual yes
+#own_window_argb_value 0
 
-default_bar_size 60 8
+#border_margin 0
+#border_inner_margin 0
+#border_outer_margin 0
 
-#########################
-# - Graphics settings - #
-#########################
+
+#====================================
+#   Graphics Settings
+#====================================
 draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
 
-default_color cccccc
 
-color0 white
-color1 E07A1F
-color2 white
+#====================================
+#   Text Settings
+#====================================
+use_xft yes
+xftalpha 0
+xftfont sans serif:size=10
+override_utf8_locale yes
+imlib_cache_size 0
+
+
+#====================================
+#   Color Scheme
+#====================================
+default_color FFFFFF
+
+color0 FFFFFF   # clock
+color1 FFFFFF   # date
+color2 FFFFFF   # current temperature
+color3 FFFFFF   # high tempratures
+color4 FFFFFF   # low tempratures
+color5 FFFFFF   # days
+
+
+#====================================
+#   Icon Sources
+#====================================
+template0 ~/.conky-vision-icons/FFFFFF  # today
+template1 ~/.conky-vision-icons/FFFFFF  # +1day
+template2 ~/.conky-vision-icons/FFFFFF  # +2days
+template3 ~/.conky-vision-icons/FFFFFF  # +3days
+template4 ~/.conky-vision-icons/FFFFFF  # +4days
+
+
+#====================================
+#   WOEID (Where On Earth ID)
+#====================================
+template7 2354645
+
+
+#====================================
+#   Temp Unit (c = Celsius, f = Fahrenheit)
+#====================================
+template8 f
+
+
+#====================================
+#   Language (e.g. es_ES.UTF-8)
+#====================================
+template9  # leave empty for locale
+
+
+###################################################
+###################################################
+
 
 TEXT
-SYSTEM ${hr 2}
-${goto 14}${voffset 6}${font conkycolorslogos:size=32}a${font}${goto 64}${voffset -25}$machine
-${goto 64}Kernel: ${kernel}
-#${hr 2}
-
-
-CPU Freq ${hr 2}
-${goto 18}${voffset 6}${font conkycolors:size=16}E${font}${voffset -4}${goto 50}Frequency: ${alignr}${freq_g (1)} GHz
-
-#CPU Usage ${hr 2}
-#${goto 14}${font conkycolors:size=16}A${font}${voffset -4}${goto 32}CPU1: ${cpu cpu0}% ${alignr}${cpubar cpu0 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU3: ${cpu cpu3}% ${alignr}${cpubar cpu3 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU4: ${cpu cpu4}% ${alignr}${cpubar cpu4 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU5: ${cpu cpu5}% ${alignr}${cpubar cpu5 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU6: ${cpu cpu6}% ${alignr}${cpubar cpu6 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU7: ${cpu cpu7}% ${alignr}${cpubar cpu7 8,60}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU8: ${cpu cpu8}% ${alignr}${cpubar cpu8 8,60}
-#CPU Usage ${hr 2}
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU1: ${cpu cpu1}%${alignr}CPU2: ${cpu cpu2}%
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU3: ${cpu cpu3}%${alignr}CPU4: ${cpu cpu4}%
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU5: ${cpu cpu5}%${alignr}CPU6: ${cpu cpu6}%
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}CPU7: ${cpu cpu7}%${alignr}CPU8: ${cpu cpu8}%
-
-CPU Temperatures ${hr 2}
-${goto 18}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 50}Core0:${alignr}${color #FCAF3E}${execi 3 sensors | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'} $color
-${goto 18}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 50}Core1:${alignr}${color #FCAF3E}${execi 3 sensors | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'} $color
-${goto 18}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 50}Core2:${alignr}${color #FCAF3E}${execi 3 sensors | grep 'Core 2' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'} $color
-${goto 18}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 50}Core3:${alignr}${color #FCAF3E}${execi 3 sensors | grep 'Core 3' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'} $color
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}Core3:${alignr}${color #FCAF3E}${execi 30 sensors | grep 'Core 3' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'} °C$color
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}Laptop Temp:${alignr}${color #FCAF3E}${execi 30 sensors | grep 'Physical' | awk '{print $4}' | sed 's/+//' | sed 's/\.0//g'}$color
-#${goto 14}${voffset 4}${font conkycolors:size=16}c${font}${voffset -4}${goto 32}Techmasters Server Temp:${alignr}${color #FCAF3E}${execi 300 ssh sorgul@student.andover.edu 'sensors' | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}$color
-
-
-Misc Info ${hr 2}
-#${goto 6}${voffset 4}${font conkycolors:size=16}d${font}${voffset -4}${goto 32}GPU Temp: ${alignr}${color #FCAF3E}${exec nvidia-settings -q GPUCoreTemp | grep Attribute | cut -d ' ' -f 6 | cut -c 1-2} °C$color
-${goto 18}${voffset 4}${font conkycolors:size=16}g${font}${voffset -4}${goto 50}Mem: ${mem} ${alignr}${membar 8,60}
-#${goto 6}${voffset 4}${font conkycolors:size=16}i${font}${voffset -4}${goto 32}Disk: ${diskio}${alignr}${diskiograph 8,60 F57900 FCAF3E}
-${goto 18}${voffset 4}${font conkycolors:size=16}i${font}${voffset -4}${goto 50}Swap: $swapperc% ${alignr}${swapbar 8,60}
-${goto 18}${voffset 4}${font conkycolors:size=16}o${font}${voffset -4}${goto 50}Uptime: ${alignr}${uptime}
-${goto 18}${voffset 4}${font conkycolors:size=16}C${font}${voffset -4}${goto 50}Proc: ${alignr}$processes ($running_processes running)
-#${goto 18}${voffset 4}${font Poky:size=15}a${font}${goto 32}${voffset -10}Highest: ${alignr 13}CPU${alignr}RAM
-#${goto 32}${voffset -5.5}${hr 1}
-#${voffset -1}${goto 32}${top name 1} ${goto 124}${top cpu 1}${alignr }${top mem 1}
-#${voffset -1}${goto 32}${top name 2} ${goto 124}${top cpu 2}${alignr }${top mem 2}
-#${voffset -1}${goto 32}${top name 3} ${goto 124}${top cpu 3}${alignr }${top mem 3}
-#${voffset -1}${goto 32}${top name 4} ${goto 124}${top cpu 4}${alignr }${top mem 4}
-
-${goto 50}Battery: ${alignr}${battery_percent}% ${alignr}${battery_bar}
-
-#Time & Date ${hr 2}
-#${font Arial Black:size=26}${alignc}${time %H:%M}${font}
-#${alignc}${time %A, %B %d, %Y}
-
-HDD ${hr 2}
-#${font conkycolors:size=16}i${font}${voffset -5}${goto 32}HDD temperature:${alignr}${color #FCAF3E}${exec hddtemp /dev/sda -n --unit=C} °C$color
-#${font conkycolors:size=16}i${font}${voffset -5}${goto 32}HDD temperature:${alignr}${hddtemp}
-${font}${goto 50}Root:${voffset -5}${voffset 4}${alignr}${fs_bar 8,60 /}
-${font}${goto 50}Home:${voffset -5}${voffset 4}${alignr}${fs_bar 8,60 /home}
-${font}${goto 50}Movies:${voffset -5}${voffset 4}${alignr}${fs_bar 8,60 /Movies}
-#${font conkycolors:size=16}i${font}${goto 32}Disk Usage:${voffset -5}${voffset 4}${alignr}${fs_free /}/${fs_size /}
-#${font conkycolors:size=16}i${font} ${voffset -5}Home
-#${voffset 4}${fs_free /home}/${fs_size /home} ${alignr}${fs_bar 8,60 /home}
-#${font conkycolors:size=16}i${font} ${voffset -5}Windows 7
-#${voffset 4}${fs_free /media/windows7}/${fs_size /media/windows7} ${alignr}${fs_bar 8,60 /media/windows7}
-
-
-Network ${hr 2}
-${if_up wlo1}
-${font conkycolors:size=14}k${font}${goto 50}${voffset -8}SSID: ${wireless_essid wlo1}
-${goto 50}Signal: ${wireless_link_qual wlo1}% ${alignr}${wireless_link_bar 8,60 wlo1}
-${voffset 4}${font conkycolors:size=14}x${font}${goto 50}${voffset -6}Up: ${upspeed wlo1}${font} ${alignr}${upspeedgraph wlo1 8,60 F57900 FCAF3E}
-${goto 50}Total: ${totalup wlo1}
-${voffset 4}${font conkycolors:size=14}u${font}${goto 50}${voffset -6}Down: ${downspeed wlo1}${font} ${alignr}${downspeedgraph wlo1 8,60 F57900 FCAF3E}
-${goto 50}Total: ${totaldown wlo1}
-${voffset 4}${font conkycolors:size=13}A${font}${goto 50}${voffset -8}Local IP: ${alignr}${addr wlo1}
-${voffset 4}${font conkycolors:size=13} ${font}${goto 50}${voffset -8}Global IP: ${alignr}${curl ipinfo.io/ip}
-
-
-# |--eno1
-#${else}${if_up eno1}
-#${voffset -13}${font conkycolors:size=14}x${font}${goto 32}${voffset -6}Up: ${upspeed eno1}${font} ${alignr}${upspeedgraph eno1 8,60 F57900 FCAF3E}
-#${goto 32}Total: ${totalup eno1}
-#${voffset -2}${font conkycolors:size=14}u${font}${goto 32}${voffset -6}Down: ${downspeed eno1}${font} ${alignr}${downspeedgraph eno1 8,60 F57900 FCAF3E}
-#${goto 32}Total: ${totaldown eno1}
-#${voffset -2}${font conkycolors:size=13}A${font}${goto 32}${voffset -4}Local IP: ${alignr}${addr eno1}
-
+#----------------------------------------
+#   CURL
+#----------------------------------------
+\
+\
+${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=${template7}&u=${template8}" -o ~/.cache/weather.xml}\
+\
+\
+#----------------------------------------
+#   Clock
+#----------------------------------------
+\
+\
+${font Poiret One:weight=Light:size=96}${color0}\
+${alignc}${time %H:%M}\
+${font}${color}
+\
+\
+#----------------------------------------
+#   Date
+#----------------------------------------
+\
+\
+${font Poiret One:weight=Light:size=28}${color1}\
+${voffset 30}\
+${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A, %B %d"}\
+${font}${color}
+\
+\
+#----------------------------------------
+#   Current Temperature
+#----------------------------------------
+\
+\
+${font Poiret One:size=18}${color2}\
+${voffset 36}\
+${goto 60}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°\
+${font}${color}\
+\
+\
+#----------------------------------------
+#   High Temperatures
+#----------------------------------------
+\
+\
+${font Poiret One:size=12}${color3}\
+${goto 164}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°\
+\
+${goto 272}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3'}°\
+\
+${goto 378}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°\
+\
+${goto 484}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°\
+${font}${color}\
+\
+\
+#----------------------------------------
+#   Low Temparatures
+#----------------------------------------
+\
+\
+${font Poiret One:size=12}${color4}\
+${voffset 52}\
+${goto 218}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°\
+${goto 324}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3'}°\
+${goto 430}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4'}°\
+${goto 536}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5'}°\
+${font}${color}
+\
+\
+#----------------------------------------
+#   Day Names
+#----------------------------------------
+\
+\
+${font Poiret One:size=14}${color5}\
+${voffset 20}\
+${goto 76}${execi 300 LANG=${template9} LC_TIME=${template9} date +%^a}\
+${goto 182}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +1day +%^a}\
+${goto 288}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +2days +%^a}\
+${goto 394}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +3days +%^a}\
+${goto 500}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +4days +%^a}\
+${font}${color}
+\
+\
+#----------------------------------------
+#   Weather Icons
+#----------------------------------------
+\
+\
+${execi 300 cp -f ${template0}/$(grep "yweather:condition" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*").png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 72,268 -s 32x32}\
+\
+${execi 300 cp -f ${template1}/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2').png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 178,268 -s 32x32}\
+\
+${execi 300 cp -f ${template2}/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 284,268 -s 32x32}\
+\
+${execi 300 cp -f ${template3}/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==4').png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 390,268 -s 32x32}\
+\
+${execi 300 cp -f ${template4}/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==5').png ~/.cache/weather-5.png}${image ~/.cache/weather-5.png -p 496,268 -s 32x32}\
+#----------------------------------------
+#   Battery
+#----------------------------------------
+\
+\
+${voffset 20}\
+${font Poiret One:weight=Light:size=25}${color0}\
+${alignc}${execi 30 acpi | awk '!($1="")' | awk '!($1="")'}\
+${font}${color}
+\
+\

@@ -87,7 +87,6 @@ set guioptions-=T
 set guioptions-=r
 "remove left-hand scroll bar
 set guioptions-=L
-
 "set gui font
 set guifont=Inconsolata\ for\ Powerline\ 12
 
