@@ -39,5 +39,6 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 
 exec i3
+#exec cinnamon-session
 #exec gnome-session
 #exec startkde

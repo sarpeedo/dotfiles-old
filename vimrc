@@ -113,6 +113,7 @@ set history=1000
 set foldmethod=marker
 
 set undolevels=1000
+set backspace=2
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 
@@ -123,6 +124,9 @@ set mat=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   Remaps                                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Run external commands withing vim with this remap
+nnoremap Q !!sh<CR>
 
 " Arrow Keys BEGONE
 inoremap  <Up>     <NOP>
@@ -145,8 +149,8 @@ nnoremap <leader>h :let @/ = ""<CR>
 inoremap <leader>h <Esc>:let @/ = ""<CR>a
 
 " Ctrl S for save Ctrl G for sudo save
-nnoremap <leader>s :w<CR>
-inoremap <leader>s <Esc>:w<CR>a
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>a
 nnoremap <leader>g :w !sudo tee % > /dev/null<CR>
 inoremap <leader>g <Esc>:w !sudo tee % > /dev/null<CR><CR>a
 
@@ -218,3 +222,11 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 
 " CtrlP
 nnoremap <Space> :CtrlP<cr>
+
+" Sets cache dir for ctrlp
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" Sets ctrlp's search algorithm to the_silver_searcher
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif

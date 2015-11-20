@@ -30,6 +30,8 @@ alias e='exit'
 alias grep='grep --color=auto'
 alias hman='man -Hgoogle-chrome-stable'
 
+stty erase '^?'
+
 # stuff to make the prompt pretty
 # and so I can tell if I'm using ssh
 PS1='\[\033[00;32m\]\u\[\033[00;33m\]@\[\033[00;32m\]\h\[\033[01;30m\]:\[\033[01;36m\]\w\[\033[01;37m\]$ \[\033[00m\]'
